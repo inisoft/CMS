@@ -36,11 +36,11 @@ namespace Inisoft.Core.Provider
 
         public object GetValue(string propertyName, object defaultValue = null)
         {
-           if (values.ContainsKey(propertyName))
+            if (values.ContainsKey(propertyName))
             {
                 return values[propertyName];
             }
-           return defaultValue;
+            return defaultValue;
         }
 
         public void SetValue(string propertyName, object value)
@@ -66,38 +66,47 @@ namespace Inisoft.Core.Provider
 
         public int GetIntValue(string propertyName, int defaultValue = 0)
         {
-            if (values.ContainsKey(propertyName))
+            object value = GetValue(propertyName, defaultValue);
+            if (ValueIsNull(value))
             {
-                return (int)values[propertyName];
+                return defaultValue;
             }
-            return defaultValue;
+            return Convert.ToInt32(value);
         }
 
         public string GetStringValue(string propertyName, string defaultValue = null)
         {
-            if (values.ContainsKey(propertyName))
+            object value = GetValue(propertyName, defaultValue);
+            if (ValueIsNull(value))
             {
-                return (string)values[propertyName];
+                return defaultValue;
             }
-            return defaultValue;
+            return Convert.ToString(value);
         }
 
         public DateTime GetDateTimeValue(string propertyName, DateTime defaultValue)
         {
-            if (values.ContainsKey(propertyName))
+            object value = GetValue(propertyName, defaultValue);
+            if (ValueIsNull(value))
             {
-                return (DateTime)values[propertyName];
+                return defaultValue;
             }
-            return defaultValue;
+            return Convert.ToDateTime(value);
         }
 
         public bool GetBoolValue(string propertyName)
         {
-            if (values.ContainsKey(propertyName))
+            object value = GetValue(propertyName, false);
+            if (ValueIsNull(value))
             {
-                return (bool)values[propertyName];
+                return false;
             }
-            return false;
+            return Convert.ToBoolean(value);
+        }
+
+        public bool ValueIsNull(object value)
+        {
+            return value == null || value == System.DBNull.Value;
         }
     }
 }

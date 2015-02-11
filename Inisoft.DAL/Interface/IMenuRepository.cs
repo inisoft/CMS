@@ -18,5 +18,12 @@ namespace Inisoft.DAL.Interface
         /// <param name="authUser"></param>
         /// <returns></returns>
         MethodResult<IList<Menu>> Get(User authUser);
+
+        /// <summary>
+        /// Menu dla danego adresu URL
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        MethodResult<Menu> GetByUrl(string url);
     }
 }

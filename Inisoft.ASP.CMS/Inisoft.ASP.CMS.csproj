@@ -56,6 +56,7 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_DB\Query\Admin\Menu\Proc_Admin_Menu_GetByUrl.sql" />
     <Content Include="App_DB\Query\Admin\Menu\Proc_Admin_Menu_GetByUser.sql" />
     <Content Include="Areas\Admin\Controls\Dashboard.ascx" />
     <Content Include="Areas\Admin\Controls\MenuControl.ascx" />
@@ -65,18 +66,6 @@
     <Content Include="Areas\Admin\Controls\User\List.ascx" />
     <Content Include="Areas\Admin\Default.aspx" />
     <Content Include="Areas\Admin\Login.aspx" />
-    <Content Include="Areas\Admin\res\css\bootstrap-theme.css" />
-    <Content Include="Areas\Admin\res\css\bootstrap-theme.min.css" />
-    <Content Include="Areas\Admin\res\css\bootstrap.css" />
-    <Content Include="Areas\Admin\res\css\bootstrap.min.css" />
-    <Content Include="Areas\Admin\res\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Areas\Admin\res\js\angular.min.js" />
-    <Content Include="Areas\Admin\res\js\bootstrap.js" />
-    <Content Include="Areas\Admin\res\js\bootstrap.min.js" />
-    <Content Include="Areas\Admin\res\js\jquery-1.11.2.min.js" />
-    <Content Include="Areas\Admin\res\js\jquery-2.1.3.min.js" />
-    <Content Include="Areas\Admin\res\js\npm.js" />
-    <Content Include="Areas\Admin\res\js\ui-bootstrap-tpls-0.12.0.min.js" />
     <Content Include="Areas\Site\Controls\Aktualnosci.ascx" />
     <Content Include="Areas\Site\Controls\Artykul.ascx" />
     <Content Include="Areas\Site\Controls\CennikFormularz.ascx" />
@@ -87,6 +76,26 @@
     <Content Include="Areas\Site\Controls\Oferta3Kolumny.ascx" />
     <Content Include="Areas\Site\Index.aspx" />
     <Content Include="Areas\Site\SiteMap.aspx" />
+    <Content Include="res\css\bootstrap-theme.css" />
+    <Content Include="res\css\bootstrap-theme.min.css" />
+    <Content Include="res\css\bootstrap.css" />
+    <Content Include="res\css\bootstrap.min.css" />
+    <Content Include="res\css\font-awesome.css" />
+    <Content Include="res\css\font-awesome.min.css" />
+    <Content Include="res\css\metisMenu.css" />
+    <Content Include="res\css\metisMenu.min.css" />
+    <Content Include="res\css\sb-admin-2.css" />
+    <Content Include="res\css\timeline.css" />
+    <Content Include="res\fonts\fontawesome-webfont.svg" />
+    <Content Include="res\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="res\js\bootstrap.js" />
+    <Content Include="res\js\bootstrap.min.js" />
+    <Content Include="res\js\jquery.js" />
+    <Content Include="res\js\jquery.min.js" />
+    <Content Include="res\js\metisMenu.js" />
+    <Content Include="res\js\metisMenu.min.js" />
+    <Content Include="res\js\npm.js" />
+    <Content Include="res\js\sb-admin-2.js" />
     <Content Include="Styles\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
@@ -147,7 +156,6 @@
     </Compile>
     <Compile Include="Areas\Admin\Controls\User\List.ascx.cs">
       <DependentUpon>List.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Areas\Admin\Controls\User\List.ascx.designer.cs">
       <DependentUpon>List.ascx</DependentUpon>
@@ -317,12 +325,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Blank.Master" />
-    <None Include="Areas\Admin\res\css\bootstrap-theme.css.map" />
-    <None Include="Areas\Admin\res\css\bootstrap.css.map" />
-    <None Include="Areas\Admin\res\fonts\glyphicons-halflings-regular.eot" />
-    <None Include="Areas\Admin\res\fonts\glyphicons-halflings-regular.ttf" />
-    <None Include="Areas\Admin\res\fonts\glyphicons-halflings-regular.woff" />
-    <None Include="Areas\Admin\res\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="res\css\bootstrap-theme.css.map" />
+    <None Include="res\css\bootstrap.css.map" />
+    <None Include="res\fonts\fontawesome-webfont.eot" />
+    <None Include="res\fonts\fontawesome-webfont.ttf" />
+    <None Include="res\fonts\fontawesome-webfont.woff" />
+    <None Include="res\fonts\FontAwesome.otf" />
+    <None Include="res\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="res\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="res\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="res\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="res\js\jquery.min.map" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

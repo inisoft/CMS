@@ -14,5 +14,6 @@ namespace Inisoft.DAL.DTO
         public string Url { get { return GetStringValue("Url"); } set { SetValue("Url", value); } }
         public string CssClass { get { return GetStringValue("CssClass"); } set { SetValue("CssClass", value); } }
         public string MenuBar { get { return GetStringValue("MenuBar"); } set { SetValue("MenuBar", value); } }
+        public string ApplicationPath { get { return GetStringValue("ApplicationPath"); } set { SetValue("ApplicationPath", value); } }
     }
 }

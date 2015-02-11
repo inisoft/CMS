@@ -1,12 +1,12 @@
 ﻿
-IF EXISTS (SELECT * FROM sysobjects WHERE type = 'P' AND name = 'Proc_Admin_Menu_GetByUser')
+IF EXISTS (SELECT * FROM sysobjects WHERE type = 'P' AND name = 'Proc_Admin_Menu_GetByUrl')
 	BEGIN
-		DROP  Procedure  Proc_Admin_Menu_GetByUser
+		DROP  Procedure  Proc_Admin_Menu_GetByUrl
 	END
 GO
 
-CREATE Procedure Proc_Admin_Menu_GetByUser
-	@UserID int
+CREATE Procedure Proc_Admin_Menu_GetByUrl
+	@Url varchar(250)
 AS
 	SET NOCOUNT ON;
 
@@ -24,7 +24,8 @@ AS
       ,[CssClass]
       ,[MenuBar]
 	  ,[ApplicationPath]
-	FROM [dbo].[Admin_Menu]
-		
+	FROM [Admin_Menu]
+	WHERE
+		[Admin_Menu].[Url] = @Url	
 
 GO

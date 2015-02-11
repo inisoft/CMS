@@ -24,6 +24,7 @@ namespace Inisoft.DAL.DTO.Definition
             result.Properties.Add(new PropertyDefinition() { Name = "Url", Title = "Url", PropertyType = PropertyTypeEnum.Text, MaxLength = 250 });
             result.Properties.Add(new PropertyDefinition() { Name = "CssClass", Title = "CssClass", PropertyType = PropertyTypeEnum.Text, MaxLength = 250 });
             result.Properties.Add(new PropertyDefinition() { Name = "MenuBar", Title = "MenuBar", PropertyType = PropertyTypeEnum.Text, MaxLength = 250 });
+            result.Properties.Add(new PropertyDefinition() { Name = "ApplicationPath", Title = "ApplicationPath", PropertyType = PropertyTypeEnum.Text, MaxLength = 250 });            
             return result;
         }
 
@@ -41,6 +42,20 @@ namespace Inisoft.DAL.DTO.Definition
                     get { return "Proc_Admin_Menu_GetByUser"; }
                 }
             }
+
+            public class GetByUrl : StorageQueryStoredProcedure, IStorageQuery
+            {
+                public GetByUrl(string url)
+                {
+                    AddParam("Url", url);
+                }
+
+                public override string QueryText
+                {
+                    get { return "Proc_Admin_Menu_GetByUrl"; }
+                }
+            }
+            
         }
     }
 }

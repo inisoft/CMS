@@ -8,6 +8,8 @@ using System.Web.Security;
 
 using Inisoft.ASP.CMS.Core;
 using Inisoft.ASP.CMS.Core.Extension;
+using Inisoft.DAL.Interface;
+using Inisoft.Core;
 
 namespace Inisoft.ASP.CMS
 {
@@ -28,38 +30,16 @@ namespace Inisoft.ASP.CMS
 
         private void LoadViewControl()
         {
-            string _controlName = "Dashboard";
-            string _pathPart = string.Empty;
-            string _controlPart = string.Empty;
-            switch (URLContext.View)
+            string _controlName = "Controls/Dashboard.ascx";
+
+            IMenuRepository menuRepository = RepositoryServiceLocator.Get<IMenuRepository>();
+            DAL.DTO.Menu menu = menuRepository.GetByUrl(string.Format("/{0}/{1}", URLContext.Area, URLContext.View)).Data;
+            if (menu != null && !string.IsNullOrEmpty(menu.ApplicationPath))
             {
-                case "":
-                case "index":
-                    _controlName = "None";
-                    break;
-                case "website":
-                    _pathPart = "WebSite";
-                    _controlPart = URLContext.Action;
-                    break;
-                case "webpage":
-                    _pathPart = "WebPage";
-                    _controlPart = URLContext.Action;
-                    break;
-                case "article":
-                    _pathPart = "Article";
-                    _controlPart = URLContext.Action;
-                    break;
-                case "menu":
-                    _pathPart = "Menu";
-                    _controlPart = URLContext.Action;
-                    break;
-            }
-            if (!string.IsNullOrEmpty(_controlPart))
-            {
-                _controlName = string.Format("{0}/{1}", _pathPart, _controlPart.UppercaseFirst());
+                _controlName = string.Format("{0}/{1}.ascx", menu.ApplicationPath, string.IsNullOrEmpty(URLContext.Action) ? "List" : URLContext.Action.UppercaseFirst());
             }
 
-            BaseControl _control = Page.LoadControl(string.Format("Controls/{0}.ascx", _controlName)) as BaseControl;
+            BaseControl _control = Page.LoadControl(_controlName) as BaseControl;
             if (_control != null)
             {
                 ControlTitle = _control.Title;

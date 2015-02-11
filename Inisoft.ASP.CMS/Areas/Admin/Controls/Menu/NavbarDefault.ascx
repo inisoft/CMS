@@ -14,6 +14,24 @@
                             </div>
                             <!-- /input-group -->
                         </li>
+
+                        <% foreach (var item in Model) { %>
+                        <li>
+                           <% if (item.ParentId == 0)
+                              {  %>
+                              <a href="<%=item.Url %>"><i class="fa <%=item.Css %> fa-fw"></i> <%= item.Title %><span class="fa arrow"></span></a>
+                              <ul class="nav nav-second-level">
+                              <%foreach (var childItem in Model.Where(x => x.ParentId == item.Id).ToList())
+                                {%>
+                                <li>
+                                    <a href="<%=childItem.Url %>"><i class="fa <%=childItem.Css %> fa-fw"></i><%= childItem.Title%></a>
+                                </li>
+                              <%} %>
+                              </ul>
+                           <%}%>
+                        </li>
+                        <%} %>
+
                         <li>
                             <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>

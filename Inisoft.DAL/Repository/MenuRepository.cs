@@ -13,6 +13,11 @@ namespace Inisoft.DAL.Repository
 {
     public class MenuRepository : BaseRepository<Menu>, IMenuRepository
     {
+        public override Core.ObjectName ObjectName
+        {
+            get { return MenuObjectDefinition.Name; }
+        }
+
         public MethodResult<IList<Menu>> Get(Core.Object.User authUser)
         {
             MethodResult<IList<Menu>> result = new MethodResult<IList<Menu>>();
@@ -20,9 +25,11 @@ namespace Inisoft.DAL.Repository
             return result;
         }
 
-        public override Core.ObjectName ObjectName
+        public MethodResult<Menu> GetByUrl(string url)
         {
-            get { return MenuObjectDefinition.Name; }
+            MethodResult<Menu> result = new MethodResult<Menu>();
+            result.Data = storageProvider.Select<Menu>(ObjectDefinition).ByQuery(new MenuObjectDefinition.QueryDefinition.GetByUrl(url)).FirstOrDefault();
+            return result;
         }
     }
 }
