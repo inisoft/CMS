@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9C12C883-96AB-48E7-9F66-E141AF124E0F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Inisoft.ASP.CMS</RootNamespace>
+    <AssemblyName>Inisoft.ASP.CMS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_DB\Query\Admin\Menu\Proc_Admin_Menu_GetByUser.sql" />
+    <Content Include="Areas\Admin\Controls\Dashboard.ascx" />
+    <Content Include="Areas\Admin\Controls\MenuControl.ascx" />
+    <Content Include="Areas\Admin\Controls\Menu\NavbarDefault.ascx" />
+    <Content Include="Areas\Admin\Controls\Menu\NavbarTop.ascx" />
+    <Content Include="Areas\Admin\Controls\None.ascx" />
+    <Content Include="Areas\Admin\Controls\User\List.ascx" />
+    <Content Include="Areas\Admin\Default.aspx" />
+    <Content Include="Areas\Admin\Login.aspx" />
+    <Content Include="Areas\Admin\res\css\bootstrap-theme.css" />
+    <Content Include="Areas\Admin\res\css\bootstrap-theme.min.css" />
+    <Content Include="Areas\Admin\res\css\bootstrap.css" />
+    <Content Include="Areas\Admin\res\css\bootstrap.min.css" />
+    <Content Include="Areas\Admin\res\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Areas\Admin\res\js\angular.min.js" />
+    <Content Include="Areas\Admin\res\js\bootstrap.js" />
+    <Content Include="Areas\Admin\res\js\bootstrap.min.js" />
+    <Content Include="Areas\Admin\res\js\jquery-1.11.2.min.js" />
+    <Content Include="Areas\Admin\res\js\jquery-2.1.3.min.js" />
+    <Content Include="Areas\Admin\res\js\npm.js" />
+    <Content Include="Areas\Admin\res\js\ui-bootstrap-tpls-0.12.0.min.js" />
+    <Content Include="Areas\Site\Controls\Aktualnosci.ascx" />
+    <Content Include="Areas\Site\Controls\Artykul.ascx" />
+    <Content Include="Areas\Site\Controls\CennikFormularz.ascx" />
+    <Content Include="Areas\Site\Controls\Home.ascx" />
+    <Content Include="Areas\Site\Controls\Kontakt.ascx" />
+    <Content Include="Areas\Site\Controls\Menu.ascx" />
+    <Content Include="Areas\Site\Controls\Oferta2Kolumny.ascx" />
+    <Content Include="Areas\Site\Controls\Oferta3Kolumny.ascx" />
+    <Content Include="Areas\Site\Index.aspx" />
+    <Content Include="Areas\Site\SiteMap.aspx" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Areas\Admin\Blank.Master.cs">
+      <DependentUpon>Blank.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\Blank.Master.designer.cs">
+      <DependentUpon>Blank.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\Dashboard.ascx.cs">
+      <DependentUpon>Dashboard.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\Dashboard.ascx.designer.cs">
+      <DependentUpon>Dashboard.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\MenuControl.ascx.cs">
+      <DependentUpon>MenuControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\MenuControl.ascx.designer.cs">
+      <DependentUpon>MenuControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\Menu\NavbarDefault.ascx.cs">
+      <DependentUpon>NavbarDefault.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\Menu\NavbarDefault.ascx.designer.cs">
+      <DependentUpon>NavbarDefault.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\Menu\NavbarTop.ascx.cs">
+      <DependentUpon>NavbarTop.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\Menu\NavbarTop.ascx.designer.cs">
+      <DependentUpon>NavbarTop.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\None.ascx.cs">
+      <DependentUpon>None.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\None.ascx.designer.cs">
+      <DependentUpon>None.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\User\List.ascx.cs">
+      <DependentUpon>List.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\User\List.ascx.designer.cs">
+      <DependentUpon>List.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Models\Menu\NavbarDefaultModel.cs" />
+    <Compile Include="Areas\Admin\Services\AccountMembershipService.cs" />
+    <Compile Include="Areas\Admin\Services\FormsAuthenticationService.cs" />
+    <Compile Include="Areas\Admin\Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Site\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Site\Controllers\SiteMapController.cs" />
+    <Compile Include="Areas\Site\Controls\Aktualnosci.ascx.cs">
+      <DependentUpon>Aktualnosci.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Site\Controls\Aktualnosci.ascx.designer.cs">
+      <DependentUpon>Aktualnosci.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Site\Controls\Artykul.ascx.cs">
+      <DependentUpon>Artykul.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Site\Controls\Artykul.ascx.designer.cs">
+      <DependentUpon>Artykul.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Site\Controls\CennikFormularz.ascx.cs">
+      <DependentUpon>CennikFormularz.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Site\Controls\CennikFormularz.ascx.designer.cs">
+      <DependentUpon>CennikFormularz.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Site\Controls\Home.ascx.cs">
+      <DependentUpon>Home.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Site\Controls\Home.ascx.designer.cs">
+      <DependentUpon>Home.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Site\Controls\Kontakt.ascx.cs">
+      <DependentUpon>Kontakt.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Site\Controls\Kontakt.ascx.designer.cs">
+      <DependentUpon>Kontakt.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Site\Controls\Menu.ascx.cs">
+      <DependentUpon>Menu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Site\Controls\Menu.ascx.designer.cs">
+      <DependentUpon>Menu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Site\Controls\Oferta2Kolumny.ascx.cs">
+      <DependentUpon>Oferta2Kolumny.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Site\Controls\Oferta2Kolumny.ascx.designer.cs">
+      <DependentUpon>Oferta2Kolumny.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Site\Controls\Oferta3Kolumny.ascx.cs">
+      <DependentUpon>Oferta3Kolumny.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Site\Controls\Oferta3Kolumny.ascx.designer.cs">
+      <DependentUpon>Oferta3Kolumny.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Site\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Site\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Site\Models\WebPageModel.cs" />
+    <Compile Include="Areas\Site\Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Site\Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Site\SiteMap.aspx.cs">
+      <DependentUpon>SiteMap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Site\SiteMap.aspx.designer.cs">
+      <DependentUpon>SiteMap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Attributes\EmailAttribute.cs" />
+    <Compile Include="Core\Attributes\PropertiesMustMatchAttribute.cs" />
+    <Compile Include="Core\Attributes\URLAttribute.cs" />
+    <Compile Include="Core\Attributes\ValidatePasswordLengthAttribute.cs" />
+    <Compile Include="Core\BaseAdminControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Core\BaseControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Core\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Core\Extension\StringExtension.cs" />
+    <Compile Include="Core\Html.cs" />
+    <Compile Include="Core\RegistrationContext.cs" />
+    <Compile Include="Core\URLContext.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="API\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="App_DB\Schema\" />
+    <Folder Include="Areas\Admin\Controls\General\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Inisoft.Core\Inisoft.Core.csproj">
+      <Project>{5852CE1C-9328-4862-8347-C87D765EFF19}</Project>
+      <Name>Inisoft.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inisoft.DAL\Inisoft.DAL.csproj">
+      <Project>{279CCC81-DF35-401B-AE7C-A66355CFFEC7}</Project>
+      <Name>Inisoft.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inisoft.MsSQL\Inisoft.MsSQL.csproj">
+      <Project>{927EAFA9-F69B-41D5-A101-42DA5145F5AE}</Project>
+      <Name>Inisoft.MsSQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inisoft.Web\Inisoft.Web.csproj">
+      <Project>{379EA824-26A7-4FEA-8979-A97B40FEDD50}</Project>
+      <Name>Inisoft.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Site\Site.Master" />
+    <Content Include="Areas\Site\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Blank.Master" />
+    <None Include="Areas\Admin\res\css\bootstrap-theme.css.map" />
+    <None Include="Areas\Admin\res\css\bootstrap.css.map" />
+    <None Include="Areas\Admin\res\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Areas\Admin\res\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Areas\Admin\res\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Areas\Admin\res\fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51739</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://dev.inisoft.cms</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://dev.inisoft.cms</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5852CE1C-9328-4862-8347-C87D765EFF19}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Inisoft.Core</RootNamespace>
+    <AssemblyName>Inisoft.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attribute\ObjectTypeAttribute.cs" />
+    <Compile Include="Extension\ObjectDefinitionExtension.cs" />
+    <Compile Include="Interface\IEngineModule.cs" />
+    <Compile Include="Interface\Storage\IStorageQueryParameter.cs" />
+    <Compile Include="Interface\Storage\IStorageQuery.cs" />
+    <Compile Include="ObjectName.cs" />
+    <Compile Include="PropertyDefinition.cs" />
+    <Compile Include="PropertyTypeEnum.cs" />
+    <Compile Include="PropertyTypeHelper.cs" />
+    <Compile Include="Repository\BaseRepository.cs" />
+    <Compile Include="Storage\BaseStorageProvider.cs" />
+    <Compile Include="Const.cs" />
+    <Compile Include="CoreException.cs" />
+    <Compile Include="DebugUtils.cs" />
+    <Compile Include="Engine.cs" />
+    <Compile Include="ExpressionVisitor.cs" />
+    <Compile Include="Extension\GenericObjectExtension.cs" />
+    <Compile Include="Helpers\UserHelper.cs" />
+    <Compile Include="Interface\Repository\IBaseRepository.cs" />
+    <Compile Include="Interface\IObjectTypeRepository.cs" />
+    <Compile Include="Interface\Storage\IStorageProvider.cs" />
+    <Compile Include="Interface\IUserRepository.cs" />
+    <Compile Include="MethodResult.cs" />
+    <Compile Include="ObjectDefinition.cs" />
+    <Compile Include="Object\ObjectType.cs" />
+    <Compile Include="Object\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\RepositoryServiceLocator.cs" />
+    <Compile Include="Repository\GenericObject.cs" />
+    <Compile Include="Repository\BaseRepository`1.cs" />
+    <Compile Include="Repository\ObjectTypeRepository.cs" />
+    <Compile Include="Repository\UserRepository.cs" />
+    <Compile Include="ReflectionUtils.cs" />
+    <Compile Include="Storage\BaseStorageQuery.cs" />
+    <Compile Include="Storage\StorageQueryParameter.cs" />
+    <Compile Include="Storage\StorageQueryQuery.cs" />
+    <Compile Include="Storage\StorageQueryStoredProcedure.cs" />
+    <Compile Include="Storage\StorageQueryTable.cs" />
+    <Compile Include="Storage\StorageQueryTypeEnum.cs" />
+    <Compile Include="Storage\StorageQueryView.cs" />
+    <Compile Include="Storage\StorageServiceLocator.cs" />
+    <Compile Include="System\SystemObjectDefinition.ObjectType.cs" />
+    <Compile Include="System\SystemObjectDefinition.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="System\SystemObjectDefinition.User.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

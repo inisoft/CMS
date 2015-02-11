@@ -1,0 +1,50 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Inisoft.ASP.CMS.Areas.Site.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <asp:ContentPlaceHolder ID="HeadMetaDataContent" runat="server" />
+    <asp:ContentPlaceHolder ID="HeadMetaDescriptionContent" runat="server" />    
+    <asp:ContentPlaceHolder ID="HeadMetaKeywordContent" runat="server" />    
+    <asp:ContentPlaceHolder ID="HeadShortcutIconContent" runat="server" />    
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <link href="../../res/m.css" rel="stylesheet" type="text/css" />
+    <script src="/res/js/m.js" language="javascript" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="HeadInlineStyleContent" runat="server" />
+    <asp:ContentPlaceHolder ID="HeadInlineJavaScriptContent" runat="server" />
+</head>
+
+<body>
+    <div class="page">
+
+        <div id="header">
+            <div class="top">
+                <div class="logo-container">
+                    <img src="/res/img/logo.png" alt="Qoffice" title="Qoffice" border="0" />
+                </div>
+            </div>
+        </div>
+        
+        <div id="main">
+            <div class="baner-container">
+                <img src="/res/img/img_baner.png" alt="Qoffice" title="Qoffice" border="0" />
+            </div>
+            <div class="line-up"></div>
+
+            <div class="main-box">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </div>
+
+            <div class="line-bottom"></div>
+        </div>
+
+        <div id="footer">
+        </div>
+
+        <div class="errors">
+            <asp:ContentPlaceHolder ID="ErrorContent" runat="server" />
+        </div>
+        
+    </div>
+</body>
+</html>
