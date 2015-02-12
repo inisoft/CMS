@@ -56,7 +56,7 @@ namespace Inisoft.ASP.CMS.Areas.Admin.Controls.Menu
             menuMenu.MenuBar = "default";
             menuMenu.Title = "Menu";
             menuMenu.Url = "/admin/menu";
-            menuUser.ApplicationPath = "Controls/Menu";
+            menuMenu.ApplicationPath = "Controls/Menu";
             menuMenu.ParentMenuId = menuAdministracja.Id;
             menuMenu.CssClass = "fa-th-list";
             menuRepository.Save(menuMenu, UserContext.AuthenticatedUser);

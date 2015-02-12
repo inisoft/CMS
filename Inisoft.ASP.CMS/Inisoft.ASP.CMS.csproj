@@ -59,7 +59,9 @@
     <Content Include="App_DB\Query\Admin\Menu\Proc_Admin_Menu_GetByUrl.sql" />
     <Content Include="App_DB\Query\Admin\Menu\Proc_Admin_Menu_GetByUser.sql" />
     <Content Include="Areas\Admin\Controls\Dashboard.ascx" />
+    <Content Include="Areas\Admin\Controls\General\Grid.ascx" />
     <Content Include="Areas\Admin\Controls\MenuControl.ascx" />
+    <Content Include="Areas\Admin\Controls\Menu\List.ascx" />
     <Content Include="Areas\Admin\Controls\Menu\NavbarDefault.ascx" />
     <Content Include="Areas\Admin\Controls\Menu\NavbarTop.ascx" />
     <Content Include="Areas\Admin\Controls\None.ascx" />
@@ -126,12 +128,29 @@
     <Compile Include="Areas\Admin\Controls\Dashboard.ascx.designer.cs">
       <DependentUpon>Dashboard.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Areas\Admin\Controls\General\BaseGridControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\General\Grid.ascx.cs">
+      <DependentUpon>Grid.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\General\Grid.ascx.designer.cs">
+      <DependentUpon>Grid.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Areas\Admin\Controls\MenuControl.ascx.cs">
       <DependentUpon>MenuControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Areas\Admin\Controls\MenuControl.ascx.designer.cs">
       <DependentUpon>MenuControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\Menu\List.ascx.cs">
+      <DependentUpon>List.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\Menu\List.ascx.designer.cs">
+      <DependentUpon>List.ascx</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Controls\Menu\NavbarDefault.ascx.cs">
       <DependentUpon>NavbarDefault.ascx</DependentUpon>
@@ -156,6 +175,7 @@
     </Compile>
     <Compile Include="Areas\Admin\Controls\User\List.ascx.cs">
       <DependentUpon>List.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Areas\Admin\Controls\User\List.ascx.designer.cs">
       <DependentUpon>List.ascx</DependentUpon>
@@ -290,7 +310,6 @@
     <Folder Include="API\" />
     <Folder Include="App_Data\" />
     <Folder Include="App_DB\Schema\" />
-    <Folder Include="Areas\Admin\Controls\General\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Inisoft.Core\Inisoft.Core.csproj">

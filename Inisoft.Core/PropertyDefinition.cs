@@ -10,6 +10,7 @@ namespace Inisoft.Core
         public PropertyDefinition()
         {
             PropertyType = PropertyTypeEnum.Text;
+            PropertyDisplayFlag = PropertyDisplayFlagEnum.Details;
         }
 
         public string Name { get; set; }
@@ -21,5 +22,12 @@ namespace Inisoft.Core
         public object DefaultValue { get; set; }
         public bool IsRequired { get; set; }
         public bool IsPK { get; set; }
+
+        public PropertyDisplayFlagEnum PropertyDisplayFlag { get; set; }
+
+        public bool CheckDisplayFlag(PropertyDisplayFlagEnum propertyDisplayFlag)
+        {
+            return (PropertyDisplayFlag & propertyDisplayFlag) == propertyDisplayFlag;
+        }
     }
 }

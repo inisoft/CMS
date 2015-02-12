@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Inisoft.ASP.CMS.Areas.Admin.Controls.User {
+namespace Inisoft.ASP.CMS.Areas.Admin.Controls.Menu {
     
     
     public partial class List {

@@ -39,7 +39,16 @@ namespace Inisoft.ASP.CMS
                 _controlName = string.Format("{0}/{1}.ascx", menu.ApplicationPath, string.IsNullOrEmpty(URLContext.Action) ? "List" : URLContext.Action.UppercaseFirst());
             }
 
-            BaseControl _control = Page.LoadControl(_controlName) as BaseControl;
+            BaseControl _control = null;
+            try
+            {
+                _control = Page.LoadControl(_controlName) as BaseControl;
+            }
+            catch (Exception except)
+            {
+                HttpContext.Current.AddError(except);
+                _control = Page.LoadControl("Controls/Dashboard.ascx") as BaseControl;
+            }
             if (_control != null)
             {
                 ControlTitle = _control.Title;

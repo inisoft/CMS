@@ -17,6 +17,7 @@ namespace Inisoft.Core.Interface
     public interface IBaseRepository<TGenericObject> : IBaseRepository
         where TGenericObject : GenericObject, new()
     {
+        MethodResult<IList<TGenericObject>> Get();
         MethodResult<TGenericObject> Get(int id);
         MethodResult<TGenericObject> Save(TGenericObject obj, User authUser);
         MethodResult Delete(TGenericObject obj, User authUser);

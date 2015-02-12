@@ -17,5 +17,10 @@ namespace Inisoft.Core
         public string Description { get; set; }
         public string Title { get; set; }
         public List<PropertyDefinition> Properties { get; set; }
+
+        public List<PropertyDefinition> GetProperties(PropertyDisplayFlagEnum propertyDisplayFlag)
+        {
+            return Properties.Where(x => x.CheckDisplayFlag(propertyDisplayFlag) == true).ToList();
+        }
     }
 }

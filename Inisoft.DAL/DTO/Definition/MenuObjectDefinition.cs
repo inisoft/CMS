@@ -20,8 +20,8 @@ namespace Inisoft.DAL.DTO.Definition
             result.ObjectName.Namespace = Name.Namespace;
             result.Title = Name.Name;
             result.Properties.Add(new PropertyDefinition() { Name = "ParentMenuId", Title = "Parent Menu", PropertyType = PropertyTypeEnum.Number });
-            result.Properties.Add(new PropertyDefinition() { Name = "Title", Title = "Title", PropertyType = PropertyTypeEnum.Text, MaxLength = 50, IsRequired = true });
-            result.Properties.Add(new PropertyDefinition() { Name = "Url", Title = "Url", PropertyType = PropertyTypeEnum.Text, MaxLength = 250 });
+            result.Properties.Add(new PropertyDefinition() { Name = "Title", Title = "Title", PropertyType = PropertyTypeEnum.Text, MaxLength = 50, IsRequired = true, PropertyDisplayFlag = PropertyDisplayFlagEnum.Details | PropertyDisplayFlagEnum.Grid });
+            result.Properties.Add(new PropertyDefinition() { Name = "Url", Title = "Url", PropertyType = PropertyTypeEnum.Text, MaxLength = 250, PropertyDisplayFlag = PropertyDisplayFlagEnum.Details | PropertyDisplayFlagEnum.Grid });
             result.Properties.Add(new PropertyDefinition() { Name = "CssClass", Title = "CssClass", PropertyType = PropertyTypeEnum.Text, MaxLength = 250 });
             result.Properties.Add(new PropertyDefinition() { Name = "MenuBar", Title = "MenuBar", PropertyType = PropertyTypeEnum.Text, MaxLength = 250 });
             result.Properties.Add(new PropertyDefinition() { Name = "ApplicationPath", Title = "ApplicationPath", PropertyType = PropertyTypeEnum.Text, MaxLength = 250 });            

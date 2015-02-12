@@ -6,13 +6,13 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 
 using Inisoft.ASP.CMS.Core;
-using Inisoft.Core.Interface;
+using Inisoft.DAL.Interface;
 using Inisoft.Core;
 using Inisoft.ASP.CMS.Areas.Admin.Controls.General;
 
-namespace Inisoft.ASP.CMS.Areas.Admin.Controls.User
+namespace Inisoft.ASP.CMS.Areas.Admin.Controls.Menu
 {
-    public partial class List : BaseGridControl<Inisoft.Core.Object.User, IUserRepository>
+    public partial class List : BaseGridControl<DAL.DTO.Menu, IMenuRepository>
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -22,7 +22,7 @@ namespace Inisoft.ASP.CMS.Areas.Admin.Controls.User
         protected override void SetupControl()
         {
             base.SetupControl();
-            this.TableHeader = "Lista użytkowników";
+            this.TableHeader = "Lista menu";
         }
     }
 }

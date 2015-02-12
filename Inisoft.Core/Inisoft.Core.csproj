@@ -52,6 +52,7 @@
     <Compile Include="Interface\Storage\IStorageQuery.cs" />
     <Compile Include="ObjectName.cs" />
     <Compile Include="PropertyDefinition.cs" />
+    <Compile Include="PropertyDisplayFlagEnum.cs" />
     <Compile Include="PropertyTypeEnum.cs" />
     <Compile Include="PropertyTypeHelper.cs" />
     <Compile Include="Repository\BaseRepository.cs" />
