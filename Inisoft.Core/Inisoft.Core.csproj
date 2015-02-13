@@ -47,15 +47,18 @@
   <ItemGroup>
     <Compile Include="Attribute\ObjectTypeAttribute.cs" />
     <Compile Include="Extension\ObjectDefinitionExtension.cs" />
+    <Compile Include="Interface\IRightRepository.cs" />
     <Compile Include="Interface\IEngineModule.cs" />
     <Compile Include="Interface\Storage\IStorageQueryParameter.cs" />
     <Compile Include="Interface\Storage\IStorageQuery.cs" />
     <Compile Include="ObjectName.cs" />
+    <Compile Include="Object\Right.cs" />
     <Compile Include="PropertyDefinition.cs" />
     <Compile Include="PropertyDisplayFlagEnum.cs" />
     <Compile Include="PropertyTypeEnum.cs" />
     <Compile Include="PropertyTypeHelper.cs" />
     <Compile Include="Repository\BaseRepository.cs" />
+    <Compile Include="Repository\RightRepository.cs" />
     <Compile Include="Storage\BaseStorageProvider.cs" />
     <Compile Include="Const.cs" />
     <Compile Include="CoreException.cs" />
@@ -87,6 +90,7 @@
     <Compile Include="Storage\StorageQueryTypeEnum.cs" />
     <Compile Include="Storage\StorageQueryView.cs" />
     <Compile Include="Storage\StorageServiceLocator.cs" />
+    <Compile Include="System\SystemObjectDefinition.Right.cs" />
     <Compile Include="System\SystemObjectDefinition.ObjectType.cs" />
     <Compile Include="System\SystemObjectDefinition.cs" />
   </ItemGroup>

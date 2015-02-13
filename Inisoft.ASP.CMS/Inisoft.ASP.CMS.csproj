@@ -58,13 +58,17 @@
   <ItemGroup>
     <Content Include="App_DB\Query\Admin\Menu\Proc_Admin_Menu_GetByUrl.sql" />
     <Content Include="App_DB\Query\Admin\Menu\Proc_Admin_Menu_GetByUser.sql" />
+    <Content Include="App_DB\Query\Admin\Role\Proc_Admin_Role_GetByCodeName.sql" />
     <Content Include="Areas\Admin\Controls\Dashboard.ascx" />
     <Content Include="Areas\Admin\Controls\General\Grid.ascx" />
-    <Content Include="Areas\Admin\Controls\MenuControl.ascx" />
+    <Content Include="Areas\Admin\Controls\Group\List.ascx" />
     <Content Include="Areas\Admin\Controls\Menu\List.ascx" />
     <Content Include="Areas\Admin\Controls\Menu\NavbarDefault.ascx" />
     <Content Include="Areas\Admin\Controls\Menu\NavbarTop.ascx" />
     <Content Include="Areas\Admin\Controls\None.ascx" />
+    <Content Include="Areas\Admin\Controls\ObjectType\List.ascx" />
+    <Content Include="Areas\Admin\Controls\Right\List.ascx" />
+    <Content Include="Areas\Admin\Controls\Role\List.ascx" />
     <Content Include="Areas\Admin\Controls\User\List.ascx" />
     <Content Include="Areas\Admin\Default.aspx" />
     <Content Include="Areas\Admin\Login.aspx" />
@@ -138,12 +142,12 @@
     <Compile Include="Areas\Admin\Controls\General\Grid.ascx.designer.cs">
       <DependentUpon>Grid.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Areas\Admin\Controls\MenuControl.ascx.cs">
-      <DependentUpon>MenuControl.ascx</DependentUpon>
+    <Compile Include="Areas\Admin\Controls\Group\List.ascx.cs">
+      <DependentUpon>List.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Areas\Admin\Controls\MenuControl.ascx.designer.cs">
-      <DependentUpon>MenuControl.ascx</DependentUpon>
+    <Compile Include="Areas\Admin\Controls\Group\List.ascx.designer.cs">
+      <DependentUpon>List.ascx</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Controls\Menu\List.ascx.cs">
       <DependentUpon>List.ascx</DependentUpon>
@@ -172,6 +176,27 @@
     </Compile>
     <Compile Include="Areas\Admin\Controls\None.ascx.designer.cs">
       <DependentUpon>None.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\ObjectType\List.ascx.cs">
+      <DependentUpon>List.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\ObjectType\List.ascx.designer.cs">
+      <DependentUpon>List.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\Right\List.ascx.cs">
+      <DependentUpon>List.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\Right\List.ascx.designer.cs">
+      <DependentUpon>List.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\Role\List.ascx.cs">
+      <DependentUpon>List.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\Role\List.ascx.designer.cs">
+      <DependentUpon>List.ascx</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Controls\User\List.ascx.cs">
       <DependentUpon>List.ascx</DependentUpon>

@@ -29,6 +29,8 @@ namespace Inisoft.Core
             public const string ObjectType = "ObjectType";
             public static readonly Inisoft.Core.ObjectName ObjectTypeName = new ObjectName() { Name = ObjectType, Namespace = Namespace.System };
 
+            public const string Right = "Right";
+            public static readonly Inisoft.Core.ObjectName RightName = new ObjectName() { Name = Right, Namespace = Namespace.System };
         }
     }
 }

@@ -66,6 +66,8 @@ namespace Inisoft.Core
             // 7. Sprawdzanie czy domyślne konto administratora zostało utworzone
             CreateDefaultSystemAdministrator();
 
+            CreateDefaultRights();
+
             // 8. Odpalanie innych eventow podczas inicjalizacji systemu
             IEnumerable<Type> engineModules = ReflectionUtils.GetTypeCollectionForBaseType(loadedAssemblies, typeof(IEngineModule));
             foreach (Type loopType in engineModules)
@@ -85,6 +87,7 @@ namespace Inisoft.Core
         {
             RepositoryServiceLocator.Register<IObjectTypeRepository, ObjectTypeRepository>();
             RepositoryServiceLocator.Register<IUserRepository, UserRepository>();
+            RepositoryServiceLocator.Register<IRightRepository, RightRepository>();
         }
         #endregion
 
@@ -166,11 +169,25 @@ namespace Inisoft.Core
             }
         }
 
+        private static void CreateDefaultRights()
+        {
+            IRightRepository rightRepository = RepositoryServiceLocator.Get<IRightRepository>();
+            IList<Right> rights = rightRepository.Get().Data;
+            foreach (Right loopRight in Right.All)
+            {
+                if (rights.Where(x => x.CodeName == loopRight.CodeName).FirstOrDefault() == null)
+                {
+                    rightRepository.Save(loopRight, SystemCreator);
+                }
+            }
+        }
+
         private static void CreateSystemObjectTypes()
         {
             IObjectTypeRepository objectTypeProvider = RepositoryServiceLocator.Get<IObjectTypeRepository>();
             objectTypeProvider.Save(SystemObjectDefinition.ObjectDefinition_ObjectType(), SystemCreator);
             objectTypeProvider.Save(SystemObjectDefinition.ObjectDefinition_User(), SystemCreator);
+            objectTypeProvider.Save(SystemObjectDefinition.ObjectDefinition_Right(), SystemCreator);
         }
         #endregion
     }

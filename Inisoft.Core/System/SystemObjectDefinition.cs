@@ -11,7 +11,8 @@ namespace Inisoft.Core
         {
             List<ObjectDefinition> systemObjects = new List<ObjectDefinition>();
             systemObjects.Add(ObjectDefinition_User());
-            systemObjects.Add(ObjectDefinition_ObjectType());            
+            systemObjects.Add(ObjectDefinition_ObjectType());
+            systemObjects.Add(ObjectDefinition_Right());
 
             return systemObjects;
         }

@@ -23,43 +23,14 @@ namespace Inisoft.ASP.CMS.Areas.Admin.Controls.Menu
 
             this.Model = menuList.Select(x => x.ToModel()).ToList();
 
-            DAL.DTO.Menu menuAdministracja = menuList.Where(x => x.Title == "Adminsitracja").FirstOrDefault();
-            if (menuAdministracja == null)
-            {
-                menuAdministracja = new DAL.DTO.Menu()
-                {
-                    CssClass = "fa-gear",
-                    MenuBar = "default",
-                    Title = "Adminsitracja"
-                };
-                menuRepository.Save(menuAdministracja, UserContext.AuthenticatedUser);
-            }
+            DAL.DTO.Menu menuAdministracja = EnsureExists(menuRepository, menuList, "Adminsitracja", string.Empty, string.Empty, "fa-gear", "default", 0);
 
-            DAL.DTO.Menu menuUser = menuList.Where(x => x.Title == "Użytkownicy").FirstOrDefault();
-            if (menuUser == null)
-            {
-                menuUser = new DAL.DTO.Menu();
-            }
-            menuUser.CssClass = "fa-user";
-            menuUser.MenuBar = "default";
-            menuUser.Title = "Użytkownicy";
-            menuUser.Url = "/admin/users";
-            menuUser.ApplicationPath = "Controls/User";
-            menuUser.ParentMenuId = menuAdministracja.Id;
-            menuRepository.Save(menuUser, UserContext.AuthenticatedUser);
-
-            DAL.DTO.Menu menuMenu = menuList.Where(x => x.Title == "Menu").FirstOrDefault();
-            if (menuMenu == null)
-            {
-                menuMenu = new DAL.DTO.Menu();
-            }
-            menuMenu.MenuBar = "default";
-            menuMenu.Title = "Menu";
-            menuMenu.Url = "/admin/menu";
-            menuMenu.ApplicationPath = "Controls/Menu";
-            menuMenu.ParentMenuId = menuAdministracja.Id;
-            menuMenu.CssClass = "fa-th-list";
-            menuRepository.Save(menuMenu, UserContext.AuthenticatedUser);
+            EnsureExists(menuRepository, menuList, "Użytkownicy", "/admin/users", "Controls/User", "fa-user", "default", menuAdministracja.Id);
+            EnsureExists(menuRepository, menuList, "Menu", "/admin/menu", "Controls/Menu", "fa-th-list", "default", menuAdministracja.Id);
+            EnsureExists(menuRepository, menuList, "Object Type", "/admin/objecttype", "Controls/ObjectType", "fa-table", "default", menuAdministracja.Id);
+            EnsureExists(menuRepository, menuList, "Role", "/admin/role", "Controls/Role", "fa-group", "default", menuAdministracja.Id);
+            EnsureExists(menuRepository, menuList, "Grupy", "/admin/group", "Controls/Group", "fa-group", "default", menuAdministracja.Id);
+            EnsureExists(menuRepository, menuList, "Prawa", "/admin/right", "Controls/Right", "fa-user", "default", menuAdministracja.Id);
         }
 
         protected override void OnSCMSEvaluateModelFromPostback()
@@ -70,6 +41,31 @@ namespace Inisoft.ASP.CMS.Areas.Admin.Controls.Menu
         protected override void OnSCMSOnPreRender()
         {
             //nothing;
+        }
+
+        private DAL.DTO.Menu EnsureExists(
+            IMenuRepository menuRepository,
+            IList<DAL.DTO.Menu> menuList,
+            string title, 
+            string url, 
+            string appPath, 
+            string css, 
+            string menuBar, 
+            int parentId)
+        {
+            DAL.DTO.Menu menu = menuList.Where(x => x.Title == title).FirstOrDefault();
+            if (menu == null)
+            {
+                menu = new DAL.DTO.Menu();
+            }
+            menu.MenuBar = menuBar;
+            menu.Title = title;
+            menu.Url = url;
+            menu.ApplicationPath = appPath;
+            menu.ParentMenuId = parentId;
+            menu.CssClass = css;
+            menuRepository.Save(menu, UserContext.AuthenticatedUser);
+            return menu;
         }
     }
 }
