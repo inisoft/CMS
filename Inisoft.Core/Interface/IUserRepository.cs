@@ -12,5 +12,6 @@ namespace Inisoft.Core.Interface
         MethodResult<User> Get(string userName, string applicationName);
         MethodResult<User> GetByEmail(string email, string applicationName);
         MethodResult<IList<User>> Get(string applicationName);
+        MethodResult<IList<User>> Get(Right right);
     }
 }

@@ -7,14 +7,16 @@ using Inisoft.Core.Attribute;
 using Inisoft.Core.Object;
 using Inisoft.Core.Interface;
 using Newtonsoft.Json;
+using Inisoft.Core.Provider;
+using Inisoft.Core.Object.Definition;
 
-namespace Inisoft.Core.Provider
+namespace Inisoft.Core.Repository
 {
     public class ObjectTypeRepository : BaseRepository<ObjectType>, IObjectTypeRepository
     {
         protected override ObjectDefinition ReadObjectDefinition()
         {
-            return SystemObjectDefinition.ObjectDefinition_ObjectType();
+            return ObjectTypeObjectDefinition.Get();
         }
 
         public override ObjectName ObjectName

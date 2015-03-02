@@ -2,16 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
-using Inisoft.Core;
-using Inisoft.Core.Interface.Storage;
 using Inisoft.Core.Storage;
+using Inisoft.Core.Interface.Storage;
 
-namespace Inisoft.DAL.DTO.Definition
+namespace Inisoft.Core.Object.Definition
 {
-    public static class GroupObjectDefinition
+    public static class RoleObjectDefinition
     {
-        public static readonly Inisoft.Core.ObjectName Name = new ObjectName() { Name = "Group", Namespace = "Admin" };
+        public static readonly Inisoft.Core.ObjectName Name = Const.Name.RoleName;
 
         public static ObjectDefinition Get()
         {
@@ -36,9 +34,9 @@ namespace Inisoft.DAL.DTO.Definition
 
                 public override string QueryText
                 {
-                    get { return "Proc_Admin_Group_GetByCodeName"; }
+                    get { return "Proc_System_Role_GetByCodeName"; }
                 }
-            }            
+            }
         }
     }
 }

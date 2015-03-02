@@ -13,7 +13,7 @@ using Inisoft.Core.Interface;
 
 namespace Inisoft.ASP.CMS.Areas.Admin.Controls.Role
 {
-    public partial class Detail : BaseDetailControl<DAL.DTO.Role, IRoleRepository>
+    public partial class Detail : BaseDetailControl<Inisoft.Core.Object.Role, IRoleRepository>
     {
         protected void Page_Load(object sender, EventArgs e)
         {

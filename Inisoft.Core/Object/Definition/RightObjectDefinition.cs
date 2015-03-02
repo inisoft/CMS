@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Inisoft.Core.Storage;
+using Inisoft.Core.Interface.Storage;
 
-namespace Inisoft.Core
+namespace Inisoft.Core.Object.Definition
 {
-    internal partial class SystemObjectDefinition
-	{
-        internal static ObjectDefinition ObjectDefinition_Right()
+    public static class RightObjectDefinition
+    {
+        public static readonly Inisoft.Core.ObjectName Name = Const.Name.RightName;
+
+        public static ObjectDefinition Get()
         {
             ObjectDefinition result = new ObjectDefinition();
             result.ObjectName.Name = Const.Name.RightName.Name;
@@ -18,5 +22,24 @@ namespace Inisoft.Core
             result.Properties.Add(new PropertyDefinition() { Name = "Description", Title = "Description", PropertyType = PropertyTypeEnum.LongText });
             return result;
         }
-	}
+
+        public static class QueryDefinition
+        {
+            /*
+            public class GetByCodeName : StorageQueryStoredProcedure, IStorageQuery
+            {
+                public GetByCodeName(string codeName)
+                {
+                    AddParam("CodeName", codeName);
+                }
+
+                public override string QueryText
+                {
+                    get { return "Proc_Admin_Role_GetByCodeName"; }
+                }
+            }
+             */
+        }
+    }
+
 }

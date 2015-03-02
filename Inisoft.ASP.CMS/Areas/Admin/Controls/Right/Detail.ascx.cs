@@ -23,6 +23,17 @@ namespace Inisoft.ASP.CMS.Areas.Admin.Controls.Right
         protected override void SetupControl()
         {
             base.SetupControl();
+
+            if (this.Model != null)
+            {
+                Grid grid = Page.LoadControl("Controls/General/Grid.ascx") as Grid;
+                this.Controls.Add(grid);
+                IUserRepository userRepository = RepositoryServiceLocator.Get<IUserRepository>();
+
+                grid.TableHeader = "Lista użytkowników";
+                grid.ObjectDefinition = userRepository.ObjectDefinition;
+                grid.SetData(userRepository.Get(this.Model).Data);
+            }
         }
     }
 }

@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Inisoft.Core.Interface;
-using Inisoft.DAL.DTO;
+using Inisoft.Core.Object;
 
-namespace Inisoft.DAL.Interface
+namespace Inisoft.Core.Interface
 {
     public interface IGroupRepository : IBaseRepository<Group>
     {

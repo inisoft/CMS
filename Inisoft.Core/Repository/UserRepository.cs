@@ -6,8 +6,10 @@ using System.Text;
 using Inisoft.Core.Object;
 using Inisoft.Core.Attribute;
 using Inisoft.Core.Interface;
+using Inisoft.Core.Provider;
+using Inisoft.Core.Object.Definition;
 
-namespace Inisoft.Core.Provider
+namespace Inisoft.Core.Repository
 {
     public class UserRepository : BaseRepository<User>, IUserRepository
     {
@@ -35,6 +37,13 @@ namespace Inisoft.Core.Provider
         public MethodResult<IList<User>> Get(string applicationName)
         {
             return new MethodResult<IList<User>>() { Data = storageProvider.Select<User>(ObjectDefinition).ToList() };
+        }
+
+        public MethodResult<IList<User>> Get(Right right)
+        {
+            MethodResult<IList<User>> result = new MethodResult<IList<User>>();
+            result.Data = storageProvider.Select<User>(ObjectDefinition).ByQuery(new UserObjectDefinition.QueryDefinition.GetByRight(right)).ToList();
+            return result;
         }
         
         protected override MethodResult<User> DoSave(User user, User authUser)

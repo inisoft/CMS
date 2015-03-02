@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Inisoft.Core.Provider;
 
-namespace Inisoft.DAL.DTO
+namespace Inisoft.Core.Object
 {
-    public class Group : GenericObject
+    public class Role : GenericObject
     {
         public string Name { get { return GetStringValue("Name"); } set { SetValue("Name", value); } }
         public string CodeName { get { return GetStringValue("CodeName"); } set { SetValue("CodeName", value); } }

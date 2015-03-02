@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using Inisoft.Core.Interface;
+using Inisoft.Core.Object;
+using Inisoft.Core.Object.Definition;
 using Inisoft.Core.Provider;
-using Inisoft.DAL.Interface;
-using Inisoft.DAL.DTO;
-using Inisoft.DAL.DTO.Definition;
-using Inisoft.Core;
 
-namespace Inisoft.DAL.Repository
+namespace Inisoft.Core.Repository
 {
     public class GroupRepository : BaseRepository<Group>, IGroupRepository
     {

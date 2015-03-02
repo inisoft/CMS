@@ -31,6 +31,12 @@ namespace Inisoft.Core
 
             public const string Right = "Right";
             public static readonly Inisoft.Core.ObjectName RightName = new ObjectName() { Name = Right, Namespace = Namespace.System };
+
+            public const string Group = "Group";
+            public static readonly Inisoft.Core.ObjectName GroupName = new ObjectName() { Name = Group, Namespace = Namespace.System };
+
+            public const string Role = "Role";
+            public static readonly Inisoft.Core.ObjectName RoleName = new ObjectName() { Name = Role, Namespace = Namespace.System };
         }
     }
 }

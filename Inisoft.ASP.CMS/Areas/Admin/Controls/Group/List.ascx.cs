@@ -13,7 +13,7 @@ using Inisoft.Core.Interface;
 
 namespace Inisoft.ASP.CMS.Areas.Admin.Controls.Group
 {
-    public partial class List : BaseGridControl<DAL.DTO.Group, IGroupRepository>
+    public partial class List : BaseGridControl<Inisoft.Core.Object.Group, IGroupRepository>
     {
         protected void Page_Load(object sender, EventArgs e)
         {

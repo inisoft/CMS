@@ -10,9 +10,10 @@ using Inisoft.DAL.Interface;
 using Inisoft.Core;
 using Inisoft.ASP.CMS.Areas.Admin.Controls.General;
 using Inisoft.Core.Interface;
+
 namespace Inisoft.ASP.CMS.Areas.Admin.Controls.Group
 {
-    public partial class Detail : BaseDetailControl<DAL.DTO.Group, IGroupRepository>
+    public partial class Detail : BaseDetailControl<Inisoft.Core.Object.Group, IGroupRepository>
     {
         protected void Page_Load(object sender, EventArgs e)
         {

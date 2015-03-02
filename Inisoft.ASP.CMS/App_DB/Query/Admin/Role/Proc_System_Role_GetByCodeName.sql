@@ -1,11 +1,11 @@
 ﻿
-IF EXISTS (SELECT * FROM sysobjects WHERE type = 'P' AND name = 'Proc_Admin_Role_GetByCodeName')
+IF EXISTS (SELECT * FROM sysobjects WHERE type = 'P' AND name = 'Proc_System_Role_GetByCodeName')
 	BEGIN
-		DROP  Procedure  Proc_Admin_Role_GetByCodeName
+		DROP  Procedure  Proc_System_Role_GetByCodeName
 	END
 GO
 
-CREATE Procedure Proc_Admin_Role_GetByCodeName
+CREATE Procedure Proc_System_Role_GetByCodeName
 	@UserID int
 AS
 	SET NOCOUNT ON;

@@ -44,21 +44,21 @@ namespace Inisoft.Core
             DebugUtils.TraceOut("Engine", "Initialize", "Storage Provider - connection test OK.");
 #endif
 
-            // 4. Rejestracja systemowych providerow
-            RegisterProviders();
+            // 4. Rejestracja systemowych repozytoriow
+            CoreEngineModule.RegisterObjectRepositories();
 
 #if DEBUG
             DebugUtils.TraceOut("Engine", "Initialize", " > Check storage schema");
 #endif
             // 5. Sprawdzanie systemowego schematu danych dla defaultowego storage providera
-            CheckSystemSchema();
+            CoreEngineModule.RegisterObjectTypes();
 
 #if DEBUG
             DebugUtils.TraceOut("Engine", "Initialize", " > Create system objects");
 #endif
 
             // 6. Rejestrowanie systemowych typów danych
-            CreateSystemObjectTypes();
+            CoreEngineModule.CreateCustomObjectTypes();
 
 #if DEBUG
             DebugUtils.TraceOut("Engine", "Initialize", " > Create default system administrator user");
@@ -79,26 +79,6 @@ namespace Inisoft.Core
                     engineModule.RegisterObjectRepositories();
                     engineModule.CreateCustomObjectTypes();
                 }
-            }
-        }
-
-        #region Register System Providers
-        private static void RegisterProviders()
-        {
-            RepositoryServiceLocator.Register<IObjectTypeRepository, ObjectTypeRepository>();
-            RepositoryServiceLocator.Register<IUserRepository, UserRepository>();
-            RepositoryServiceLocator.Register<IRightRepository, RightRepository>();
-        }
-        #endregion
-
-        #region System Storage schema
-        public static void CheckSystemSchema()
-        {
-            // 4. Validacja systemowej bazy danych i wszystkich tabel, tworzenie schematu 
-            // TODO: (potem tworzenie może być przeniesione na wizarda jakiegoś)
-            foreach (ObjectDefinition loopObjectDefinition in SystemObjectDefinition.GetAll())
-            {
-                CheckSystemSchemaForObject(loopObjectDefinition);
             }
         }
 
@@ -141,7 +121,6 @@ namespace Inisoft.Core
 #endif
             }
         }
-        #endregion
 
         #region Create System default objects
         public static User SystemCreator = new User() { Id = 0, FirstName = "System", LastName = "Creator", Email = "system.creator@inisoft.pl" };
@@ -182,13 +161,6 @@ namespace Inisoft.Core
             }
         }
 
-        private static void CreateSystemObjectTypes()
-        {
-            IObjectTypeRepository objectTypeProvider = RepositoryServiceLocator.Get<IObjectTypeRepository>();
-            objectTypeProvider.Save(SystemObjectDefinition.ObjectDefinition_ObjectType(), SystemCreator);
-            objectTypeProvider.Save(SystemObjectDefinition.ObjectDefinition_User(), SystemCreator);
-            objectTypeProvider.Save(SystemObjectDefinition.ObjectDefinition_Right(), SystemCreator);
-        }
         #endregion
     }
 }

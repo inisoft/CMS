@@ -58,7 +58,8 @@
   <ItemGroup>
     <Content Include="App_DB\Query\Admin\Menu\Proc_Admin_Menu_GetByUrl.sql" />
     <Content Include="App_DB\Query\Admin\Menu\Proc_Admin_Menu_GetByUser.sql" />
-    <Content Include="App_DB\Query\Admin\Role\Proc_Admin_Role_GetByCodeName.sql" />
+    <Content Include="App_DB\Query\Admin\Role\Proc_System_Role_GetByCodeName.sql" />
+    <Content Include="App_DB\Query\Admin\User\Proc_System_User_GetByRightId.sql" />
     <Content Include="Areas\Admin\Controls\Dashboard.ascx" />
     <Content Include="Areas\Admin\Controls\General\DetailView.ascx" />
     <Content Include="Areas\Admin\Controls\General\Grid.ascx" />
