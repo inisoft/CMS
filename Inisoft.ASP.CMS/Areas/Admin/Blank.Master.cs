@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 
 using Inisoft.ASP.CMS.Core;
 using System.Web.Security;
+using Inisoft.Web;
 
 namespace Inisoft.ASP.CMS.Areas.Admin
 {
@@ -14,7 +15,7 @@ namespace Inisoft.ASP.CMS.Areas.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            URLContext _urlContext = URLContext.Get(this.Request);
+            UrlContext _urlContext = UrlContext.Get(this.Request);
             mainForm.Action = _urlContext.OryginalURL;
         }
 

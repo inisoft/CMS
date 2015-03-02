@@ -6,6 +6,7 @@ using Inisoft.ASP.CMS.Core;
 using Inisoft.Core.Interface;
 using Inisoft.Core.Provider;
 using Inisoft.Core;
+using Inisoft.Web;
 
 namespace Inisoft.ASP.CMS.Areas.Admin.Controls.General
 {

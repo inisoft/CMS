@@ -33,10 +33,10 @@ namespace Inisoft.ASP.CMS
             string _controlName = "Controls/Dashboard.ascx";
 
             IMenuRepository menuRepository = RepositoryServiceLocator.Get<IMenuRepository>();
-            DAL.DTO.Menu menu = menuRepository.GetByUrl(string.Format("/{0}/{1}", URLContext.Area, URLContext.View)).Data;
+            DAL.DTO.Menu menu = menuRepository.GetByUrl(string.Format("/{0}/{1}", UrlContext.Area, UrlContext.View)).Data;
             if (menu != null && !string.IsNullOrEmpty(menu.ApplicationPath))
             {
-                _controlName = string.Format("{0}/{1}.ascx", menu.ApplicationPath, string.IsNullOrEmpty(URLContext.Action) ? "List" : URLContext.Action.UppercaseFirst());
+                _controlName = string.Format("{0}/{1}.ascx", menu.ApplicationPath, string.IsNullOrEmpty(UrlContext.Action) ? "List" : UrlContext.Action.UppercaseFirst());
             }
 
             BaseControl _control = null;

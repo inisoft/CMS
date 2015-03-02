@@ -13,6 +13,7 @@
                         {%>
                         <th><%=propertyDefinition.Title%></th>
                     <%} %>
+                    <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -24,6 +25,9 @@
                         {%>
                         <td><%=obj.GetValue(propertyDefinition.Name, string.Empty)%></td>
                     <%} %>
+                        <td>
+                            <a href="<%=Inisoft.Web.UrlHelper.GetDetailUrl(this.UrlContext, obj) %>" class="btn btn-default btn-circle"><i class="fa fa-edit"></i></a>
+                        </td>
                     </tr>
                 <%} %>
                 </tbody>

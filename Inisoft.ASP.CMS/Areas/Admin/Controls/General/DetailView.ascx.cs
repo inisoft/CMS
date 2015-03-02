@@ -4,38 +4,27 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+
 using Inisoft.Core.Object;
 using Inisoft.Core;
 using Inisoft.Core.Provider;
-using Inisoft.Web;
 
 namespace Inisoft.ASP.CMS.Areas.Admin.Controls.General
 {
-    public partial class Grid : CMSUserControl
+    public partial class DetailView : CMSUserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
         }
-
-        
-
-        public string TableHeader { get; set; }
 
         public ObjectDefinition ObjectDefinition { get; set; }
 
-        public IList<GenericObject> Data { get; private set; }
+        public GenericObject Data { get; private set; }
 
-        public void SetData(IEnumerable<GenericObject> data)
+        public void SetData(GenericObject data)
         {
-            if (this.Data != null)
-            {
-                this.Data.Clear();
-            }
-            this.Data = new List<GenericObject>();
-            foreach (GenericObject genericObject in data)
-            {
-                this.Data.Add(genericObject);
-            }
+            this.Data = data;
         }
 
         private List<PropertyDefinition> displayedProperties = null;
@@ -45,7 +34,7 @@ namespace Inisoft.ASP.CMS.Areas.Admin.Controls.General
             {
                 if (ObjectDefinition != null)
                 {
-                    displayedProperties = ObjectDefinition.GetProperties(PropertyDisplayFlagEnum.Grid);
+                    displayedProperties = ObjectDefinition.GetProperties(PropertyDisplayFlagEnum.Details);
                     if (displayedProperties == null || displayedProperties.Count == 0)
                     {
                         displayedProperties = new List<PropertyDefinition>();

@@ -60,15 +60,22 @@
     <Content Include="App_DB\Query\Admin\Menu\Proc_Admin_Menu_GetByUser.sql" />
     <Content Include="App_DB\Query\Admin\Role\Proc_Admin_Role_GetByCodeName.sql" />
     <Content Include="Areas\Admin\Controls\Dashboard.ascx" />
+    <Content Include="Areas\Admin\Controls\General\DetailView.ascx" />
     <Content Include="Areas\Admin\Controls\General\Grid.ascx" />
+    <Content Include="Areas\Admin\Controls\Group\Detail.ascx" />
     <Content Include="Areas\Admin\Controls\Group\List.ascx" />
+    <Content Include="Areas\Admin\Controls\Menu\Detail.ascx" />
     <Content Include="Areas\Admin\Controls\Menu\List.ascx" />
     <Content Include="Areas\Admin\Controls\Menu\NavbarDefault.ascx" />
     <Content Include="Areas\Admin\Controls\Menu\NavbarTop.ascx" />
     <Content Include="Areas\Admin\Controls\None.ascx" />
+    <Content Include="Areas\Admin\Controls\ObjectType\Detail.ascx" />
     <Content Include="Areas\Admin\Controls\ObjectType\List.ascx" />
+    <Content Include="Areas\Admin\Controls\Right\Detail.ascx" />
     <Content Include="Areas\Admin\Controls\Right\List.ascx" />
+    <Content Include="Areas\Admin\Controls\Role\Detail.ascx" />
     <Content Include="Areas\Admin\Controls\Role\List.ascx" />
+    <Content Include="Areas\Admin\Controls\User\Detail.ascx" />
     <Content Include="Areas\Admin\Controls\User\List.ascx" />
     <Content Include="Areas\Admin\Default.aspx" />
     <Content Include="Areas\Admin\Login.aspx" />
@@ -96,17 +103,14 @@
     <Content Include="res\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="res\js\bootstrap.js" />
     <Content Include="res\js\bootstrap.min.js" />
+    <Content Include="res\js\cms.js" />
     <Content Include="res\js\jquery.js" />
     <Content Include="res\js\jquery.min.js" />
     <Content Include="res\js\metisMenu.js" />
     <Content Include="res\js\metisMenu.min.js" />
     <Content Include="res\js\npm.js" />
     <Content Include="res\js\sb-admin-2.js" />
-    <Content Include="Styles\Site.css" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
-    <Content Include="Scripts\jquery-1.4.1.js" />
-    <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -132,8 +136,21 @@
     <Compile Include="Areas\Admin\Controls\Dashboard.ascx.designer.cs">
       <DependentUpon>Dashboard.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Areas\Admin\Controls\General\BaseDetailControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Areas\Admin\Controls\General\BaseGridControl.cs">
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\General\CMSUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\General\DetailView.ascx.cs">
+      <DependentUpon>DetailView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\General\DetailView.ascx.designer.cs">
+      <DependentUpon>DetailView.ascx</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Controls\General\Grid.ascx.cs">
       <DependentUpon>Grid.ascx</DependentUpon>
@@ -142,12 +159,26 @@
     <Compile Include="Areas\Admin\Controls\General\Grid.ascx.designer.cs">
       <DependentUpon>Grid.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Areas\Admin\Controls\Group\Detail.ascx.cs">
+      <DependentUpon>Detail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\Group\Detail.ascx.designer.cs">
+      <DependentUpon>Detail.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Areas\Admin\Controls\Group\List.ascx.cs">
       <DependentUpon>List.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Areas\Admin\Controls\Group\List.ascx.designer.cs">
       <DependentUpon>List.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\Menu\Detail.ascx.cs">
+      <DependentUpon>Detail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\Menu\Detail.ascx.designer.cs">
+      <DependentUpon>Detail.ascx</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Controls\Menu\List.ascx.cs">
       <DependentUpon>List.ascx</DependentUpon>
@@ -177,12 +208,26 @@
     <Compile Include="Areas\Admin\Controls\None.ascx.designer.cs">
       <DependentUpon>None.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Areas\Admin\Controls\ObjectType\Detail.ascx.cs">
+      <DependentUpon>Detail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\ObjectType\Detail.ascx.designer.cs">
+      <DependentUpon>Detail.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Areas\Admin\Controls\ObjectType\List.ascx.cs">
       <DependentUpon>List.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Areas\Admin\Controls\ObjectType\List.ascx.designer.cs">
       <DependentUpon>List.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\Right\Detail.ascx.cs">
+      <DependentUpon>Detail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\Right\Detail.ascx.designer.cs">
+      <DependentUpon>Detail.ascx</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Controls\Right\List.ascx.cs">
       <DependentUpon>List.ascx</DependentUpon>
@@ -191,12 +236,26 @@
     <Compile Include="Areas\Admin\Controls\Right\List.ascx.designer.cs">
       <DependentUpon>List.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Areas\Admin\Controls\Role\Detail.ascx.cs">
+      <DependentUpon>Detail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\Role\Detail.ascx.designer.cs">
+      <DependentUpon>Detail.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Areas\Admin\Controls\Role\List.ascx.cs">
       <DependentUpon>List.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Areas\Admin\Controls\Role\List.ascx.designer.cs">
       <DependentUpon>List.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\User\Detail.ascx.cs">
+      <DependentUpon>Detail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\Controls\User\Detail.ascx.designer.cs">
+      <DependentUpon>Detail.ascx</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Controls\User\List.ascx.cs">
       <DependentUpon>List.ascx</DependentUpon>
@@ -325,7 +384,6 @@
     <Compile Include="Core\Extension\StringExtension.cs" />
     <Compile Include="Core\Html.cs" />
     <Compile Include="Core\RegistrationContext.cs" />
-    <Compile Include="Core\URLContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

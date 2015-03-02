@@ -4,11 +4,10 @@ using System.Linq;
 using System.Web;
 using Inisoft.Web;
 
-namespace Inisoft.ASP.CMS.Core
+namespace Inisoft.ASP.CMS.Areas.Admin.Controls.General
 {
-    public class BasePage : System.Web.UI.Page
+    public class CMSUserControl : System.Web.UI.UserControl
     {
-
         private UrlContext _URLContext = null;
         public UrlContext UrlContext
         {
@@ -16,7 +15,7 @@ namespace Inisoft.ASP.CMS.Core
             {
                 if (_URLContext == null)
                 {
-                    _URLContext = UrlContext.Get(this.Request);
+                    _URLContext = UrlHelper.GetUrlContext();
                 }
                 return _URLContext;
             }

@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Security;
 using Inisoft.ASP.CMS.Core;
+using Inisoft.Web;
 
 namespace Inisoft.ASP.CMS
 {
@@ -13,7 +14,7 @@ namespace Inisoft.ASP.CMS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            URLContext _urlContext = URLContext.Get(this.Request);
+            UrlContext _urlContext = UrlContext.Get(this.Request);
             mainForm.Action = _urlContext.OryginalURL;
         }
 

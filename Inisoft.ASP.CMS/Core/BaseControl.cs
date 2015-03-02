@@ -8,6 +8,7 @@ using System.Reflection;
 using System.Globalization;
 using System.Collections;
 using System.ComponentModel;
+using Inisoft.Web;
 
 namespace Inisoft.ASP.CMS.Core
 {
@@ -30,14 +31,14 @@ namespace Inisoft.ASP.CMS.Core
             get { return HeadTitle; }
         }
 
-        private URLContext _URLContext = null;
-        public URLContext URLContext
+        private UrlContext _URLContext = null;
+        public UrlContext UrlContext
         {
             get
             {
                 if (_URLContext == null)
                 {
-                    _URLContext = URLContext.Get(this.Request);
+                    _URLContext = UrlContext.Get(this.Request);
                 }
                 return _URLContext;
             }

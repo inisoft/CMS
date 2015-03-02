@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
 using System.Collections.Specialized;
+using System.Web;
 
-namespace Inisoft.ASP.CMS.Core
+namespace Inisoft.Web
 {
-    /// <summary>
-    /// Klasa pozwalajaca na rozpoznanie odpowiednich czesci URLa
-    /// </summary>
-    public class URLContext
+    public class UrlContext
     {
-        protected URLContext()
+        protected UrlContext()
         {
         }
 
@@ -23,9 +21,9 @@ namespace Inisoft.ASP.CMS.Core
         public string OryginalURL { get; private set; }
         public NameValueCollection NameValueCollection { get; private set; }
 
-        public static URLContext Get(HttpRequest Request)
+        public static UrlContext Get(HttpRequest Request)
         {
-            URLContext _result = new URLContext();
+            UrlContext _result = new UrlContext();
             string _url = Request.ServerVariables["HTTP_X_ORIGINAL_URL"];
             _result.OryginalURL = _url;
             if (_url != null)
@@ -70,4 +68,5 @@ namespace Inisoft.ASP.CMS.Core
             return _result;
         }
     }
+
 }
