@@ -60,6 +60,7 @@
     <Content Include="App_DB\Query\Admin\Menu\Proc_Admin_Menu_GetByUser.sql" />
     <Content Include="App_DB\Query\Admin\Role\Proc_System_Role_GetByCodeName.sql" />
     <Content Include="App_DB\Query\Admin\User\Proc_System_User_GetByRightId.sql" />
+    <Content Include="Areas\Admin\api.aspx" />
     <Content Include="Areas\Admin\Controls\Dashboard.ascx" />
     <Content Include="Areas\Admin\Controls\General\DetailView.ascx" />
     <Content Include="Areas\Admin\Controls\General\Grid.ascx" />
@@ -123,6 +124,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Areas\Admin\api.aspx.cs">
+      <DependentUpon>api.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Areas\Admin\api.aspx.designer.cs">
+      <DependentUpon>api.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Areas\Admin\Blank.Master.cs">
       <DependentUpon>Blank.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -369,6 +377,7 @@
     <Compile Include="Areas\Site\SiteMap.aspx.designer.cs">
       <DependentUpon>SiteMap.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Core\Attributes\EmailAttribute.cs" />
     <Compile Include="Core\Attributes\PropertiesMustMatchAttribute.cs" />
     <Compile Include="Core\Attributes\URLAttribute.cs" />

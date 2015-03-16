@@ -17,6 +17,11 @@ namespace Inisoft.Core
             return AppDomain.CurrentDomain.GetAssemblies();
         }
 
+        public static IEnumerable<Type> GetTypeCollectionForBaseType(Type baseType)
+        {
+            return GetTypeCollectionForBaseType(GetAllAssemblies(), baseType);
+        }
+
         /// <summary>
         /// Zwraca wszystkie mające dany typ bazowy (dziedziczące po baseType)
         /// </summary>
